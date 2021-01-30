@@ -1,0 +1,11 @@
+### Ignore Files
+
+.vscode
+
+__pycache__/
+
+migrations/
+
+__init__.py
+
+Practice/settings.py
