@@ -73,8 +73,8 @@
 
 1. models에서 정수값은 어떻게 입력했는지?
 2. 라우터에 대한 내용
-  ★배포는 war파일로 배포가능(https://jythonbook-ko.readthedocs.io/en/latest/JythonDjango.html) 애플리케이션 배포
-  -> 자이썬
+    ★배포는 war파일로 배포가능(https://jythonbook-ko.readthedocs.io/en/latest/JythonDjango.html) 애플리케이션 배포
+    -> 자이썬
 
 20210131 계획
 0. git을 총괄 프로젝트(Release), front, back 만들기 
