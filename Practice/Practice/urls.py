@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Hello import views as hello
+from member import views as member
 
 from django.conf.urls import url, include
 from rest_framework import routers
@@ -28,5 +29,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', hello.hi),
     url(r'^', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('member/', include('member.urls')), # member.urls에 들어오는 url들을 해당 파일에서 관리
 ]
