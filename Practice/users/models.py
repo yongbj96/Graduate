@@ -1,6 +1,6 @@
 from django.db import models
 
-class Region(models.Model):
+class Region(models.Model): # 지역
     region = models.IntegerField(primary_key=True)
     region_name = models.CharField(max_length=50)
 
@@ -9,7 +9,7 @@ class Region(models.Model):
         verbose_name        = '지역' # 해당 테이블을 조회할 때 테이블이름
         verbose_name_plural = '지역리스트' # 해당 테이블을 조회할 때 테이블이름 (기본값 = "verbose_name"+s)
 
-class User(models.Model):
+class User(models.Model): # 사용자
     num = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=5)
     last_name = models.CharField(max_length=10)

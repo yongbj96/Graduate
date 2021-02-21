@@ -7,7 +7,7 @@ class RegionSerializer(serializers.ModelSerializer):
         fields = ('region', 'region_name')
 
 class UserSerializer(serializers.ModelSerializer):
-    region = RegionSerializer(read_only=True)
+    region = RegionSerializer()
     class Meta:
         model = User
         fields = ('num', 'first_name', 'last_name', 'gender', 'age', 'region')
