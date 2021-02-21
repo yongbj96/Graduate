@@ -1,3 +1,11 @@
+
+
+```
+Excalidraw - https://excalidraw.com/#room=21b5dd0abba1bebaf992,UAiQQU4_15EgddlpeI9y1Q
+```
+
+
+
 ## Django 프로젝트 생성
 
 - 개발환경구축(OS: Windows 10)
