@@ -13,14 +13,23 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+# 기본동작 관련
 from django.contrib import admin
 from django.urls import path
 from Hello import views as hello
 from member import views as member
 
+# rest_framework, router 관련
 from django.conf.urls import url, include
 from rest_framework import routers
 from users import views as users
+
+# jwt 관련 (링크: https://dev-yakuza.posstree.com/ko/django/jwt/)
+# obtain: JWT 토큰을 발행할 때 사용
+# verify: JWT 토큰을 검증할 때 사용
+# refresh: JWT 토큰을 갱신할 때 사용
+from rest_framework_jwt.views import obtain_jwt_token, verify_jwt_token, refresh_jwt_token
 
 router = routers.DefaultRouter()
 router.register(r'users', users.UserViewSet) # users 페이지
@@ -31,15 +40,22 @@ urlpatterns = [
     # 네비게이터 페이지
     path('', hello.hi), # 메인 페이지
 
-    # resr_framework 실습
+    # rest_framework 실습
     url(r'^', include(router.urls)), # users의 router
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')), # user 상세 페이지
     
     # GET, POST 실습
     path('member/', include('member.urls')), # member/~를 member/urls파일에서 관리
+
+    # JWT 실습
+    path('api/token/', obtain_jwt_token), #발행
+    path('api/token/verify/', verify_jwt_token), #검증
+    path('api/token/refresh/', refresh_jwt_token), #갱신
+
+    # JWT 실습 - URL 연결 (‘api/blog/’,~)
 ]
 
-# 중간일정
+# 중간일정 (대기)
 # 두 개의 테이블 JOIN해서 GET 페이지 완성하기
 ## 정석 방법: https://wave1994.tistory.com/70
 ## 정석 방법: https://jay-ji.tistory.com/35
