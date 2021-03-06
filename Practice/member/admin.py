@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import BoardMember
+from .models import BoardMember, Post
 
 # 관리자 페이지에 보이게 하기
 class BoardMemberAdmin(admin.ModelAdmin):
@@ -8,3 +8,4 @@ class BoardMemberAdmin(admin.ModelAdmin):
 
 # 관리자 페이지에 등록
 admin.site.register(BoardMember, BoardMemberAdmin)
+admin.site.register(Post)

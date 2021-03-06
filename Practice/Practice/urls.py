@@ -36,6 +36,7 @@ router.register(r'users', users.UserViewSet) # users 페이지
 
 urlpatterns = [
     path('admin/', admin.site.urls), # 관리자 페이지
+    # id : yong, pw : tndlf123
     
     # 네비게이터 페이지
     path('', hello.hi), # 메인 페이지
