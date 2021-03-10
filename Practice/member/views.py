@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import BoardMember
 
@@ -26,9 +26,10 @@ def register(request):
                 password = password,
                 email = email,
             )
-            member.save() # 데이터베이스에 저장
+            #member.save() # 데이터베이스에 저장
+            print("#####회원가입#####\nid: ", member.username, "\npw: ", member.password, "\nemail: ", member.email)
 
-        return render(request, 'register.html', res_data) # res_data를 넘겨서 html을 request
+        return redirect('/') # 다른 페이지로 이동
 
 @api_view(['GET']) # 요청이 GET인지 확인하여 JSON 타입으로 반환
 @permission_classes((IsAuthenticated, )) # 권한을 체크(로그인 했는지 여부만 체크)

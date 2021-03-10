@@ -17,7 +17,7 @@ Including another URLconf
 # 기본동작 관련
 from django.contrib import admin
 from django.urls import path
-from Hello import views as hello
+from Main import views as main
 from member import views as member
 
 # rest_framework, router 관련
@@ -38,8 +38,8 @@ urlpatterns = [
     path('admin/', admin.site.urls), # 관리자 페이지
     # id : yong, pw : tndlf123
     
-    # 네비게이터 페이지
-    path('', hello.hi), # 메인 페이지
+    # 메인 페이지
+    path('', main.login), # 메인 페이지
 
     # rest_framework 실습
     url(r'^', include(router.urls)), # users의 router
