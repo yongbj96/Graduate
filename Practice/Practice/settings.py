@@ -118,6 +118,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# member/static 부분에 css파일을 적용시키기 위해 작성
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'), # import os 입력시 사용가능
 ]
