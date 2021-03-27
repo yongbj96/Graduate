@@ -26,7 +26,7 @@ def register(request):
                 password = password,
                 email = email,
             )
-            # member.save() # 데이터베이스에 저장
+            member.save() # 데이터베이스에 저장
             print("#####회원가입#####\nid: ", member.username, "\npw: ", member.password, "\nemail: ", member.email)
 
         return redirect('/') # 다른 페이지로 이동
